@@ -56,7 +56,7 @@ How many rows are there for the `Green` Taxi data for all CSV files in the year 
 - Add a `timezone` property set to `UTC-5` in the `Schedule` trigger configuration
 - Add a `location` property set to `New_York` in the `Schedule` trigger configuration
 
-> Answer: Add a `timezone`property set to`America/New_York`in the`Schedule` trigger configuration`
+> Answer: Add a `timezone`property set to`America/New_York`in the`Schedule` trigger configuration
 
 ## Submitting the solutions
 
