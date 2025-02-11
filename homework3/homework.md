@@ -6,8 +6,14 @@ Question 1: What is count of records for the 2024 Yellow Taxi Data?
 - 840,402
 - 20,332,093
 - 85,431,289
+> CREATE OR REPLACE EXTERNAL TABLE `warehouse-450522.demo_dataset.external_yellow_tripdata`
+OPTIONS (
+  format = 'PARQUET',
+  uris = ['gs://dezoomcamp_hw3_2025-450522/yellow_tripdata_2024-*.parquet']
+);
 
-> Answer: ``
+SELECT count(*) FROM `warehouse-450522.demo_dataset.external_yellow_tripdata`;
+> Answer: `20,332,093`
 
 ## Question 2:
 Write a query to count the distinct number of PULocationIDs for the entire dataset on both the tables.</br> 
