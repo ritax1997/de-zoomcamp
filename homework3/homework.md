@@ -88,9 +88,9 @@ No Points: Write a `SELECT count(*)` query FROM the materialized table you creat
 Materialized Tables Are Precomputed
 
 > 1. Materialized table is already physically stored with precomputed results. When querying it, BigQuery does not need to scan underlying raw data but instead directly retrieves stored values.
-2. BigQuery is optimized to return metadata-based counts (SELECT COUNT(*)) without scanning the full table. It retrieves the count from table metadata rather than performing a full scan, leading to 0 B of data processed.
+> 2. BigQuery is optimized to return metadata-based counts (SELECT COUNT(*)) without scanning the full table. It retrieves the count from table metadata rather than performing a full scan, leading to 0 B of data processed.
 Storage vs. Query Processing
-3. While materialized tables take up storage, querying them in this way does not incur additional costs in terms of query processing.`
+> 3. While materialized tables take up storage, querying them in this way does not incur additional costs in terms of query processing.`
 
 ## Submitting the solutions
 
