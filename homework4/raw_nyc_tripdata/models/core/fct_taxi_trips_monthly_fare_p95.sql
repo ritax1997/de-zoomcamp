@@ -4,7 +4,7 @@
   )
 }}
 
-with filtered_trips as (
+with trips_data as (
     select
         service_type,
         extract(year from pickup_datetime) as year,
@@ -14,20 +14,15 @@ with filtered_trips as (
     where fare_amount > 0
         and trip_distance > 0
         and payment_type_description in ('Cash', 'Credit Card')
-),
-
-percentiles as (
-    select
-        service_type,
-        year,
-        month,
-        -- BigQuery uses PERCENTILE_CONT without WITHIN GROUP
-        PERCENTILE_CONT(fare_amount, 0.97) over (partition by service_type, year, month) as p97,
-        PERCENTILE_CONT(fare_amount, 0.95) over (partition by service_type, year, month) as p95,
-        PERCENTILE_CONT(fare_amount, 0.90) over (partition by service_type, year, month) as p90
-    from filtered_trips
 )
 
--- Remove duplicates since window functions will repeat values
-select distinct * from percentiles
-order by service_type, year, month
+SELECT
+    service_type,
+    year,
+    month,
+    PERCENTILE_CONT(fare_amount, 0.97) OVER (PARTITION BY service_type, year, month) AS p97,
+    PERCENTILE_CONT(fare_amount, 0.95) OVER (PARTITION BY service_type, year, month) AS p95,
+    PERCENTILE_CONT(fare_amount, 0.90) OVER (PARTITION BY service_type, year, month) AS p90
+FROM trips_data
+WHERE year = 2020 AND month = 4
+ORDER BY service_type
