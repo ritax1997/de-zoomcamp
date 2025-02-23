@@ -1,9 +1,10 @@
 version: 2
 
 sources:
-  - name: raw_nyc_tripdata
-    database: "{{ env_var('DBT_BIGQUERY_PROJECT', 'warehouse-450522') }}"
-    schema:   "{{ env_var('DBT_BIGQUERY_SOURCE_DATASET', 'raw_nyc_tripdata') }}"
+  - name: staging
+    database: "warehouse-450522"
+    schema:   "raw_nyc_tripdata"
     tables:
       - name: external_green_tripdata
       - name: external_yellow_tripdata
+      - name: external_fhv_tripdata
