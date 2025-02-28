@@ -6,16 +6,10 @@
 - Execute spark.version.
 
 What's the output?
-Ans:``
-> [!NOTE]
-> To install PySpark follow this [guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/05-batch/setup/pyspark.md)
+Ans:`3.3.2`
 
 
 ## Question 2: Yellow October 2024
-
-Read the October 2024 Yellow into a Spark Dataframe.
-
-Repartition the Dataframe to 4 partitions and save it to parquet.
 
 What is the average size of the Parquet (ending with .parquet extension) Files that were created (in MB)? Select the answer which most closely matches.
 
@@ -24,7 +18,7 @@ What is the average size of the Parquet (ending with .parquet extension) Files t
 - 75MB
 - 100MB
 
-Ans:``
+Ans:`25MB`
 
 ## Question 3: Count records 
 
@@ -37,7 +31,7 @@ Consider only trips that started on the 15th of October.
 - 125,567
 - 145,567
 
-Ans:``
+Ans:`125,567`
 
 ## Question 4: Longest trip
 
@@ -48,7 +42,7 @@ What is the length of the longest trip in the dataset in hours?
 - 162
 - 182
 
-Ans:``
+Ans:`162`
 
 ## Question 5: User Interface
 
@@ -59,7 +53,7 @@ Spark’s User Interface which shows the application's dashboard runs on which l
 - 4040
 - 8080
 
-Ans:``
+Ans:`4040`
 
 ## Question 6: Least frequent pickup location zone
 
@@ -76,4 +70,4 @@ Using the zone lookup data and the Yellow October 2024 data, what is the name of
 - Rikers Island
 - Jamaica Bay
 
-Ans:``
+Ans:`Governor's Island/Ellis Island/Liberty Island`
