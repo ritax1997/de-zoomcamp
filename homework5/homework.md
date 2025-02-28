@@ -6,6 +6,7 @@
 - Execute spark.version.
 
 What's the output?
+
 Ans:`3.3.2`
 
 
