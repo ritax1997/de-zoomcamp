@@ -178,20 +178,17 @@ took = t1 - t0
 
 How much time did it take to send the entire dataset and flush? 
 ```
-Total time taken: 51.41 seconds
+Total time taken: 51.73 seconds
 ```
 
 ## Question 5: Build a Sessionization Window (2 points)
 
-Now we have the data in the Kafka stream. It's time to process it.
 
-* Copy `aggregation_job.py` and rename it to `session_job.py`
-* Have it read from `green-trips` fixing the schema
-* Use a [session window](https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/operators/windows/) with a gap of 5 minutes
-* Use `lpep_dropoff_datetime` time as your watermark with a 5 second tolerance
 * Which pickup and drop off locations have the longest unbroken streak of taxi trips?
 
-
+```
+pulocationid = 82 and dolocationid = 138
+```
 ## Submitting the solutions
 
 - Form for submitting: https://courses.datatalks.club/de-zoomcamp-2025/homework/hw6
